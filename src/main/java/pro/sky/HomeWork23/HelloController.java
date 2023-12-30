@@ -9,11 +9,10 @@ public class HelloController {
     public HelloController(HelloService helloService) {
         this.helloService = helloService;
     }
-
     @GetMapping(path = "/calculator")
-    public String hello(){
-        return helloService.helloAnswer();
+    public String answerCalculate(){
+        return helloService.answerCalculate();
     }
-    }
+}
 
 

@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/calculator")
 public class CalculateController {
-    private CalculateService calculateService = new CalculateService();
+    private final CalculateService calculateService;
+    public CalculateController(CalculateService calculateService){
+        this.calculateService = calculateService;
+    }
     @GetMapping(path = "/plus")
        public String plusAnswer(@RequestParam float num1, @RequestParam float num2){
           return calculateService.plusAnswer(num1, num2);
